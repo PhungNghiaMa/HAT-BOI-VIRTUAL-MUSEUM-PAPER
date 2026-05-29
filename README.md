@@ -9,19 +9,9 @@
    ```
     cd HAT-BOI-VIRTUAL-MUSEUM-PAPER/PAPER/.venv
     ```
-3. If you use Windows and PowerShell, activate the virtual environment using:
+3. Install all required dependencies using pip:
     ```
-    .\Scripts\activate
-    ```
-    If you use Windows and Command Prompt, activate the virtual environment using:
-    ```
-    .\Scripts\activate.bat
-    ```
-
-    
-    If you use macOS or Linux, activate the virtual environment using:
-     ```
-    source bin/activate
+    pip install -r requirements.txt
     ```
 
 4. Run the main script:
@@ -80,11 +70,10 @@ The SUS is a 10-item questionnaire scored on a 5-point scale, where 1 = Strongly
 
 ## Key Results (Paired t-Tests)
 
-This analysis compares the Museum system to the Baseline system across various metrics. The results confirm a **highly significant and massive improvement** in the Museum system.
+This analysis compared the Museum system with the Baseline system across usability and user experience metrics. The results indicate statistically significant improvements for the Museum condition across all evaluated dimensions.
 
-| **Metric**        | **t-statistic** | **p-value**       | **Cohen’s d** | **Interpretation**                                 |
-|------------------|-----------------|-------------------|---------------|----------------------------------------------------|
-| SUS              | 72.14           | < 1.15e−39        | 7.49          | Massive effect on usability                        |
-| UEQ Pragmatic    | 76.06           | < 7.16e−31        | 9.35          | Extremely large effect on clarity and effectiveness|
-| UEQ Hedonic      | 40.02           | < 8.00e−31        | 9.41          | Extremely large effect on appeal and stimulation   |
-| UEQ Overall      | 44.01           | < 7.38e−31        | 9.65          | Extremely large overall superiority                |
+| **Metric**     | **t-statistic** | **p-value** | **Interpretation** |
+|----------------|-----------------|-------------|--------------------|
+| SUS            | 5.84            | < .001      | Significant improvement in perceived usability |
+| UEQ Pragmatic  | 34.14           | < .001      | Strong improvement in pragmatic quality and effectiveness |
+| UEQ Hedonic    | 38.46           | < .001      | Strong improvement in hedonic quality and stimulation |
