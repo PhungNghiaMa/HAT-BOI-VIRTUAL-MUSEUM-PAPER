@@ -53,17 +53,21 @@ df["UEQ_Hedonic"] = df[
     [c + "_scaled" for c in ueq_hedonic]
 ].mean(axis=1)
 
+
+
+
 # =========================================================
 # SPLIT CONDITIONS
 # =========================================================
-museum = df[df["condition"] == "Museum"]
-baseline = df[df["condition"] == "Baseline"]
+museum = df[df["CONDITION"] == "HAT BOI"]
+baseline = df[df["CONDITION"] == "GA&C"]
 
 # =========================================================
 # PRINT STATISTICS
 # =========================================================
 museum_sus = museum["SUS_Score"]
 baseline_sus = baseline["SUS_Score"]
+
 
 t_sus, p_sus = ttest_rel(
     museum_sus.reset_index(drop=True),
@@ -135,6 +139,8 @@ print(
     f"p-value = {p_hed:.4e}\n"
 )
 
+
+
 # =========================================================
 # VISUALIZATION STYLE
 # =========================================================
@@ -147,7 +153,7 @@ plt.figure(figsize=(8, 6))
 
 sns.violinplot(
     data=df,
-    x="condition",
+    x="CONDITION",
     y="SUS_Score",
     inner="box"
 )
@@ -164,22 +170,22 @@ plt.show()
 # =========================================================
 ueq_long = pd.concat([
     pd.DataFrame({
-        "Condition": museum["condition"],
+        "Condition": museum["CONDITION"],
         "Score": museum["UEQ_Pragmatic"],
         "Dimension": "Pragmatic"
     }),
     pd.DataFrame({
-        "Condition": baseline["condition"],
+        "Condition": baseline["CONDITION"],
         "Score": baseline["UEQ_Pragmatic"],
         "Dimension": "Pragmatic"
     }),
     pd.DataFrame({
-        "Condition": museum["condition"],
+        "Condition": museum["CONDITION"],
         "Score": museum["UEQ_Hedonic"],
         "Dimension": "Hedonic"
     }),
     pd.DataFrame({
-        "Condition": baseline["condition"],
+        "Condition": baseline["CONDITION"],
         "Score": baseline["UEQ_Hedonic"],
         "Dimension": "Hedonic"
     })
